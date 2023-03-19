@@ -534,8 +534,8 @@ Screen1 As screen:
         TemplatePadding: =0
         TemplateSize: =25
         Width: =961
-        X: =384
-        Y: =168
+        X: =371
+        Y: =172
         ZIndex: =4
 
         Label5 As label:
