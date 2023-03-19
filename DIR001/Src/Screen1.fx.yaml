@@ -596,7 +596,7 @@ Screen1 As screen:
 
     Label15 As label:
         Height: =68
-        Text: ="Text"
+        Text: ="Textpppp"
         Width: =197
         X: =60
         Y: =60
