@@ -594,6 +594,15 @@ Screen1 As screen:
             X: =530
             ZIndex: =6
 
+        Label110 As label:
+            Height: =22
+            OnSelect: =Select(Parent)
+            Size: =10
+            Text: =ThisItem.loser_rank_points
+            Width: =80
+            X: =667
+            ZIndex: =6
+
     Label15 As label:
         Height: =68
         Text: ="Textpppp"
