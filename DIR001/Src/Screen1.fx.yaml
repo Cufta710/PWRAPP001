@@ -1,0 +1,596 @@
+Screen1 As screen:
+
+    "Gallery1 As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver4.0'":
+        Height: =712
+        Items: =Sort(GroupBy(wta_matches_2019x, "field_1","field_2","field_5","GTournaments"),field_1,SortOrder.Ascending)
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        OnSelect: =
+        ShowNavigation: =true
+        TemplatePadding: =0
+        TemplateSize: =Min(168, Self.Height - 60)
+        Width: =331
+        X: =40
+        ZIndex: =1
+
+        Title2 As label:
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.field_1
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth - 104
+            X: =32
+            Y: =16
+            ZIndex: =1
+
+        Subtitle2 As label:
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.field_2
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth - 104
+            X: =32
+            Y: =Title2.Y + Title2.Height + 2
+            ZIndex: =2
+
+        Body2 As label:
+            Height: =Self.Size * 4
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.field_5
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth - 104
+            X: =32
+            Y: =Subtitle2.Y + Subtitle2.Height + 4
+            ZIndex: =3
+
+        NextArrow2 As icon.ChevronRight:
+            AccessibleLabel: =Self.Tooltip
+            Height: =60
+            Icon: =Icon.ChevronRight
+            OnSelect: =Select(Parent)
+            PaddingBottom: =10
+            PaddingLeft: =10
+            PaddingRight: =10
+            PaddingTop: =10
+            TabIndex: =0
+            Tooltip: ="View item details"
+            Width: =60
+            X: =Parent.TemplateWidth - Self.Width - 5
+            Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+            ZIndex: =4
+
+        Separator2 As rectangle:
+            Height: =1
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - 1
+            ZIndex: =5
+
+    DataTable1 As dataTable.datatable:
+        BorderStyle: =BorderStyle.Solid
+        DisplayMode: =DisplayMode.Edit
+        Fill: =RGBA(0, 0, 0, 0)
+        Height: =134
+        Items: =Filter(wta_matches_2019x,tourney_name = Gallery1.Selected.Title2.Text)
+        Size: =9
+        Width: =961
+        X: =384
+        Y: =14
+        ZIndex: =2
+
+        tourney_level_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="tourney_level"
+            FieldName: ="field_4"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =25
+            Text: =ThisItem.tourney_level
+            Width: =100
+            X: =801
+            Y: =0
+            ZIndex: =8
+
+        winner_name_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="winner_name"
+            FieldName: ="field_10"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =11
+            Text: =ThisItem.winner_name
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =14
+
+        winner_ioc_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="winner_ioc"
+            FieldName: ="field_13"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =14
+            Text: =ThisItem.winner_ioc
+            Visible: =false
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =17
+
+        loser_name_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="loser_name"
+            FieldName: ="field_18"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =19
+            Text: =ThisItem.loser_name
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =22
+
+        loser_ioc_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="loser_ioc"
+            FieldName: ="field_21"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =22
+            Text: =ThisItem.loser_ioc
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =25
+
+        score_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="score"
+            FieldName: ="field_23"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =24
+            Text: =ThisItem.score
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =27
+
+        best_of_Column1 As dataTableColumn.numberColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="best_of"
+            FieldName: ="field_24"
+            FieldVariantName: ="numberColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =26
+            Text: =ThisItem.best_of
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =28
+
+        round_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="round"
+            FieldName: ="field_25"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =5
+            Text: =ThisItem.round
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =29
+
+        minutes_Column1 As dataTableColumn.numberColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="minutes"
+            FieldName: ="field_26"
+            FieldVariantName: ="numberColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =27
+            Text: =ThisItem.minutes
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =30
+
+        w_ace_Column1 As dataTableColumn.numberColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="w_ace"
+            FieldName: ="field_27"
+            FieldVariantName: ="numberColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =28
+            Text: =ThisItem.w_ace
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =31
+
+        w_df_Column1 As dataTableColumn.numberColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="w_df"
+            FieldName: ="field_28"
+            FieldVariantName: ="numberColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =29
+            Text: =ThisItem.w_df
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =32
+
+        w_svpt_Column1 As dataTableColumn.numberColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="w_svpt"
+            FieldName: ="field_29"
+            FieldVariantName: ="numberColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =30
+            Text: =ThisItem.w_svpt
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =33
+
+        w_1stIn_Column1 As dataTableColumn.numberColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="w_1stIn"
+            FieldName: ="field_30"
+            FieldVariantName: ="numberColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =31
+            Text: =ThisItem.w_1stIn
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =34
+
+        w_1stWon_Column1 As dataTableColumn.numberColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="w_1stWon"
+            FieldName: ="field_31"
+            FieldVariantName: ="numberColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =32
+            Text: =ThisItem.w_1stWon
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =35
+
+        w_2ndWon_Column1 As dataTableColumn.numberColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="w_2ndWon"
+            FieldName: ="field_32"
+            FieldVariantName: ="numberColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =33
+            Text: =ThisItem.w_2ndWon
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =36
+
+        w_SvGms_Column1 As dataTableColumn.numberColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="w_SvGms"
+            FieldName: ="field_33"
+            FieldVariantName: ="numberColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =34
+            Text: =ThisItem.w_SvGms
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =37
+
+        w_bpSaved_Column1 As dataTableColumn.numberColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="w_bpSaved"
+            FieldName: ="field_34"
+            FieldVariantName: ="numberColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =35
+            Text: =ThisItem.w_bpSaved
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =38
+
+        w_bpFaced_Column1 As dataTableColumn.numberColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="w_bpFaced"
+            FieldName: ="field_35"
+            FieldVariantName: ="numberColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =36
+            Text: =ThisItem.w_bpFaced
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =39
+
+        l_ace_Column1 As dataTableColumn.numberColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="l_ace"
+            FieldName: ="field_36"
+            FieldVariantName: ="numberColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =37
+            Text: =ThisItem.l_ace
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =40
+
+        l_df_Column1 As dataTableColumn.numberColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="l_df"
+            FieldName: ="field_37"
+            FieldVariantName: ="numberColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =38
+            Text: =ThisItem.l_df
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =41
+
+        l_svpt_Column1 As dataTableColumn.numberColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="l_svpt"
+            FieldName: ="field_38"
+            FieldVariantName: ="numberColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =39
+            Text: =ThisItem.l_svpt
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =42
+
+        l_1stIn_Column1 As dataTableColumn.numberColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="l_1stIn"
+            FieldName: ="field_39"
+            FieldVariantName: ="numberColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =40
+            Text: =ThisItem.l_1stIn
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =43
+
+        l_1stWon_Column1 As dataTableColumn.numberColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="l_1stWon"
+            FieldName: ="field_40"
+            FieldVariantName: ="numberColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =41
+            Text: =ThisItem.l_1stWon
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =44
+
+        l_2ndWon_Column1 As dataTableColumn.numberColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="l_2ndWon"
+            FieldName: ="field_41"
+            FieldVariantName: ="numberColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =42
+            Text: =ThisItem.l_2ndWon
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =45
+
+        l_SvGms_Column1 As dataTableColumn.numberColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="l_SvGms"
+            FieldName: ="field_42"
+            FieldVariantName: ="numberColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =43
+            Text: =ThisItem.l_SvGms
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =46
+
+        l_bpSaved_Column1 As dataTableColumn.numberColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="l_bpSaved"
+            FieldName: ="field_43"
+            FieldVariantName: ="numberColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =44
+            Text: =ThisItem.l_bpSaved
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =47
+
+        l_bpFaced_Column1 As dataTableColumn.numberColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="l_bpFaced"
+            FieldName: ="field_44"
+            FieldVariantName: ="numberColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =45
+            Text: =ThisItem.l_bpFaced
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =48
+
+        winner_rank_Column1 As dataTableColumn.numberColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="winner_rank"
+            FieldName: ="field_45"
+            FieldVariantName: ="numberColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =46
+            Text: =ThisItem.winner_rank
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =49
+
+        winner_rank_points_Column1 As dataTableColumn.numberColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="winner_rank_points"
+            FieldName: ="field_46"
+            FieldVariantName: ="numberColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =47
+            Text: =ThisItem.winner_rank_points
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =50
+
+        loser_rank_Column1 As dataTableColumn.numberColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="loser_rank"
+            FieldName: ="field_47"
+            FieldVariantName: ="numberColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =48
+            Text: =ThisItem.loser_rank
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =51
+
+        loser_rank_points_Column1 As dataTableColumn.numberColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="loser_rank_points"
+            FieldName: ="field_48"
+            FieldVariantName: ="numberColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =49
+            Text: =ThisItem.loser_rank_points
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =52
+
+    Gallery4 As gallery.galleryVertical:
+        Height: =596
+        Items: =wta_matches_2019x
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplateFill: =If(ThisItem.IsSelected,Color.DimGrey, Color.White)
+        TemplatePadding: =0
+        TemplateSize: =25
+        Width: =961
+        X: =384
+        Y: =168
+        ZIndex: =4
+
+        Label5 As label:
+            BorderThickness: =1
+            Height: =22
+            OnSelect: =Select(Parent)
+            Size: =10
+            Text: =ThisItem.round
+            Width: =81
+            ZIndex: =1
+
+        Label6 As label:
+            BorderThickness: =1
+            Height: =22
+            OnSelect: =Select(Parent)
+            Size: =10
+            Text: =ThisItem.loser_name
+            Width: =122
+            X: =203
+            ZIndex: =2
+
+        Label7 As label:
+            BorderThickness: =1
+            Height: =22
+            OnSelect: =Select(Parent)
+            Size: =10
+            Text: =ThisItem.winner_name
+            Width: =122
+            X: =Label5.X + Label5.Width
+            ZIndex: =3
+
+        Label8 As label:
+            Height: =22
+            OnSelect: =Select(Parent)
+            Size: =10
+            Text: =ThisItem.score
+            Width: =124
+            X: =327
+            ZIndex: =4
+
+        Label9 As label:
+            Height: =22
+            OnSelect: =Select(Parent)
+            Size: =10
+            Text: =ThisItem.ID
+            Width: =33
+            X: =451
+            ZIndex: =5
+
+        Label10 As label:
+            Height: =22
+            OnSelect: =Select(Parent)
+            Size: =10
+            Text: =ThisItem.tourney_date
+            Width: =80
+            X: =530
+            ZIndex: =6
+

@@ -1,0 +1,90 @@
+Screen4 As screen:
+
+    Button5 As button:
+        Height: =41
+        OnSelect: |-
+            =ClearCollect(colStrings,Blank());
+            Collect(colStrings,"B1");
+            Collect(colStrings,"B2");
+            Collect(colStrings,"31");
+            Collect(colStrings,"51");
+            Set(strTry,Concat(colStrings,Value & ","));
+            Set(strTry,Left(strTry,Len(strTry)-1));
+        Text: ="Button"
+        Width: =141
+        X: =40
+        Y: =40
+        ZIndex: =1
+
+    Label4 As label:
+        Text: =false
+        X: =336
+        Y: =41
+        ZIndex: =2
+
+    Button6 As button:
+        OnSelect: |
+            =/*ClearCollect(
+                colPlayers,
+                
+                    ShowColumns(
+                        Filter(
+                            atp_playersREFs,
+                            ioc = "CZE"
+                        ),
+                        "cr58e_dob",
+                        "cr58e_hand",
+                        "cr58e_height",
+                        "cr58e_ioc",
+                        "cr58e_name_first",
+                        "cr58e_name_last"
+                    
+                )
+            );
+            
+            UpdateIf(
+                colPlayers,
+                cr58e_hand = "R",
+                {
+                    cr58e_name_first: If(
+                        ThisRecord.cr58e_name_first = "Frantisek",
+                        "XXX",
+                        ThisRecord.cr58e_name_first
+                    ),
+                     cr58e_name_last: If(
+                        Value(ThisRecord.cr58e_height) = 185,
+                        "XXX",
+                        ThisRecord.cr58e_name_last
+                    )
+                }
+            );*/
+            //Patch(atp_playersREFs,colPlayers);
+            ClearCollect(colNumbz,"209663");
+            Collect(colNumbz,"209664");
+            Collect(colNumbz,"209665");
+            Collect(colNumbz,"209666");
+            Collect(colNumbz,"209667");
+            Collect(colNumbz,"209668");
+            Collect(colNumbz,"209654");
+            Collect(colNumbz,"209655");
+            Collect(colNumbz,"209656");
+            Collect(colNumbz,"209657");
+            Collect(colNumbz,"209658");
+            Collect(colNumbz,"209644");
+            Collect(colNumbz,"209645");
+            Collect(colNumbz,"209646");
+            Collect(colNumbz,"209647");
+            Collect(colNumbz,"209648");
+            
+            /*
+            ClearCollect(colUpdates,Filter(atp_playersREFs,player_id = "209663"));
+            UpdateIf(colUpdates,true,{wikidata_id:"XYZ9999"});
+            
+            Patch(atp_playersREFs,colUpdates);
+            */
+            UpdateIf(atp_playersREFs,player_id in colNumbz.Value,
+        Text: ="Button"
+        X: =868
+        Y: =41
+        ZIndex: =4
+

@@ -1,0 +1,30 @@
+{
+  "2891f42b-a926-4bbf-b7d5-0ab6fc03432d": {
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "SharePoint",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1591/1.0.1591.2961/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {
+      "https://74ngrv.sharepoint.com/sites/TeamTestTennis": {
+        "dataSources": {
+          "wta_matches_2019x": {
+            "tableName": "4b699d3e-51f2-4999-afaf-28776549c1f2"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "wta_matches_2019x"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "2891f42b-a926-4bbf-b7d5-0ab6fc03432d"
+  }
+}

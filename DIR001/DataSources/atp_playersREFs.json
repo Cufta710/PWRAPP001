@@ -1,0 +1,103 @@
+[
+  {
+    "DisplayName": "atp_playersREFs (Views)",
+    "Name": "_cr58e_atp_playersref_views",
+    "RelatedEntityName": "atp_playersREFs",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "05436aa4-f6c0-4837-b312-1314e38bbe3f": "atp_playersREF Advanced Find View",
+      "1b1c8bbc-c83f-4ec5-b408-75e7d43c1f1e": "atp_playersREF Associated View",
+      "afd1a0c5-d301-4d0a-92c3-25a443ee7dd9": "Inactive atp_playersREFs",
+      "ba231dac-44d3-4973-aced-75afda7edc90": "atp_playersREF Lookup View",
+      "f24bf5ab-32e7-410c-90cc-acc9b798ddda": "Active atp_playersREFs"
+    }
+  },
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "cr58e_atp_playersrefs",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "cr58e_atp_playersref",
+    "MaxGetRowsCount": 2000,
+    "Name": "atp_playersREFs",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "cr58e_atp_matches_cr58e_winner_idX_cr58e_": "atp_matchess",
+      "cr58e_atp_playersref_AsyncOperations": "System Jobs",
+      "cr58e_atp_playersref_BulkDeleteFailures": "Bulk Delete Failures",
+      "cr58e_atp_playersref_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "cr58e_atp_playersref_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "cr58e_atp_playersref_ProcessSession": "Process Sessions",
+      "cr58e_atp_playersref_SyncErrors": "Sync Errors",
+      "cr58e_atp_playersrefid": "atp_playersREF",
+      "cr58e_dob": "dob",
+      "cr58e_hand": "hand",
+      "cr58e_height": "height",
+      "cr58e_ioc": "ioc",
+      "cr58e_name_first": "name_first",
+      "cr58e_name_last": "name_last",
+      "cr58e_player_id": "player_id",
+      "cr58e_wikidata_id": "wikidata_id",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "atp_playersREFs",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Status (atp_playersREFs)",
+    "Name": "cr58e_atp_playersref_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "atp_playersREFs"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "atp_playersREFs",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (atp_playersREFs)",
+    "Name": "cr58e_atp_playersref_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "atp_playersREFs"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "atp_playersREFs",
+    "Type": "OptionSetInfo"
+  }
+]

@@ -1,0 +1,205 @@
+"Screen2 As screen.'phoneLayout_FluidGridWithHeaderPageLayout_ver3.0'":
+    OnVisible: =
+
+    RectQuickActionBar1 As rectangle:
+        Height: =88
+        Width: =Parent.Width
+        ZIndex: =1
+
+    LblAppName1 As label:
+        Align: =Align.Center
+        Height: =88
+        Text: ="[Title]"
+        Width: =Parent.Width
+        ZIndex: =2
+
+    Button1 As button:
+        OnSelect: |-
+            =ClearCollect(trwTree999,GroupBy(atp_matchess,"cr58e_tourney_level","cr58e_tourney_name","GrpName"));
+            ClearCollect(trwTree666,
+                AddColumns(trwTree999,"cntt",CountRows(GrpName))
+            );
+            ClearCollect(trwTree555,DropColumns(trwTree666,"GrpName"))
+        Text: ="Button"
+        X: =40
+        Y: =40
+        ZIndex: =5
+
+    DataTable3 As dataTable.datatable:
+        BorderStyle: =BorderStyle.Solid
+        DisplayMode: =DisplayMode.Edit
+        Fill: =RGBA(0, 0, 0, 0)
+        Height: =177
+        Items: =trwStage04
+        Width: =958
+        X: =384
+        Y: =160
+        ZIndex: =6
+
+        FullName_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="FullName"
+            FieldName: ="FullName"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =1
+            Text: =ThisItem.FullName
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =3
+
+        Result_Column2 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="Result"
+            FieldName: ="Result"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =2
+            Text: =ThisItem.Result
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =4
+
+        SortOrder_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="SortOrder"
+            FieldName: ="SortOrder"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =3
+            Text: =ThisItem.SortOrder
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =5
+
+        TreePath_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="TreePath"
+            FieldName: ="TreePath"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =4
+            Text: =ThisItem.TreePath
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =6
+
+    Button2 As button:
+        OnSelect: |-
+            =ClearCollect(trwStage01,ForAll(Distinct(atp_matchess,Substitute(Substitute(Substitute(tourney_level,"A","ATP"),"M","Masters"),"G","Grand slam") & "-" & tourney_name), {Result: ThisRecord.Value}));
+            ClearCollect(trwStage02,
+                AddColumns(
+                    trwStage01,"FullName",
+                        Switch(Result,"A","ATP","G","Grand Slam","M","Masters")
+                    )
+                );
+            ClearCollect(trwStage03,
+                AddColumns(
+                    trwStage02,"SortOrder",
+                        Switch(Result,"A","01-03","G","01-01","M","01-02")
+                    )
+                );
+            ClearCollect(trwStage04,
+                AddColumns(
+                    trwStage03,"TreePath",
+                        FullName
+                    )
+                )            
+        Text: ="Button"
+        X: =286
+        Y: =40
+        ZIndex: =7
+
+    Button3 As button:
+        Fill: =RGBA(0, 121, 187, 1)
+        OnSelect: |-
+            =ClearCollect(
+                trw01,
+                ShowColumns(atp_matchess,"cr58e_tourney_level","cr58e_tourney_name")
+            );
+            UpdateIf(trw01,true,{cr58e_tourney_level : Switch(cr58e_tourney_level,"A","ATP","G","Grand Slam","M","Masters")});
+            ClearCollect(
+                trw03,
+                AddColumns(
+                    trw01,
+                    "TrnLvl2",
+                    cr58e_tourney_level & "-" & cr58e_tourney_name)
+            )
+        Text: ="Button"
+        X: =808
+        Y: =48
+        ZIndex: =8
+
+    DataTable4 As dataTable.datatable:
+        BorderStyle: =BorderStyle.Solid
+        DisplayMode: =DisplayMode.Edit
+        Fill: =RGBA(0, 0, 0, 0)
+        Height: =359
+        Items: =trwTree666
+        Width: =510
+        X: =384
+        Y: =378
+        ZIndex: =9
+
+        cntt_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="cntt"
+            FieldName: ="cntt"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =1
+            Text: =ThisItem.cntt
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =7
+
+        cr58e_tourney_level_Column2 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="cr58e_tourney_level"
+            FieldName: ="cr58e_tourney_level"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =2
+            Text: =ThisItem.cr58e_tourney_level
+            Width: =100
+            X: =342
+            Y: =0
+            ZIndex: =8
+
+        cr58e_tourney_name_Column2 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="cr58e_tourney_name"
+            FieldName: ="cr58e_tourney_name"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =3
+            Text: =ThisItem.cr58e_tourney_name
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =9
+
+    Label2 As label:
+        Text: =CountRows(trwTree999)
+        X: =1023
+        Y: =526
+        ZIndex: =10
+
+    Button4 As button:
+        Text: ="Button6"
+        X: =1114
+        Y: =100
+        ZIndex: =11
+
