@@ -594,3 +594,11 @@ Screen1 As screen:
             X: =530
             ZIndex: =6
 
+    Label15 As label:
+        Height: =68
+        Text: ="Text"
+        Width: =197
+        X: =60
+        Y: =60
+        ZIndex: =5
+
