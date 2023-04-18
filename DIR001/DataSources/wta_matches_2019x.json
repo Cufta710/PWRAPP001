@@ -3,7 +3,7 @@
     "ApiId": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
     "CdpRevision": {
       "BaseUrl": "/",
-      "LastChangedTimeString": "2022-07-19T16:16:58.1250000Z",
+      "LastChangedTimeString": "2023-04-04T16:27:15.2810000Z",
       "RevisionNumber": 1
     },
     "ConnectedDataSourceInfoNameMapping": {
@@ -79,6 +79,7 @@
       "field_9": "winner_entry",
       "ID": "ID",
       "Modified": "Modified",
+      "OData__ColorTag": "Color Tag",
       "Title": "Title"
     },
     "DatasetName": "https://74ngrv.sharepoint.com/sites/TeamTestTennis",
